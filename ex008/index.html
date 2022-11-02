@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #btn {
+            width: 200px;
+            height: 90px;
+        }
+        #res {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vários cálculos em JS</h1>
+    <button id="btn" onclick="clicar()">
+        Clique para calcular
+    </button>
+    <div id="res">
+        <p>O resultado vai aparecer aqui...</p>
+    </div>
+    <hr>
+    <div id="res1">
+
+    </div>
+    <script>
+        function clicar() {
+            let resultado1 = window.document.getElementById("res")
+            let resultado2 = window.document.getElementById("res1")
+            let numeroUm = Number(window.prompt("Digite um número: "))
+
+            resultado1.innerHTML = `<p>O numero a ser análisado aqui será o <strong>${numeroUm}</strong></p>`
+
+            resultado2.innerHTML += `<p>O seu valor absoluto é <strong>${Math.abs(numeroUm)}</strong></p>`
+            resultado2.innerHTML += `<p>A sua parte inteira é <strong>${Math.trunc(numeroUm)}</strong></p>`
+            resultado2.innerHTML += `<p>O valor inteiro mais próximo é <strong>${Math.round(numeroUm)}</strong></p>`
+            resultado2.innerHTML += `<p>A sua raiz quadrada é <strong>${Math.sqrt(numeroUm).toFixed(2)}</strong></p>`
+            resultado2.innerHTML += `<p>A sua raiz cúbica é <strong>${Math.cbrt(numeroUm).toFixed(2)}</strong></p>`
+            resultado2.innerHTML += `<p>O valor de <strong>${numeroUm}<sup>2</sup></strong> é ${Math.pow(numeroUm, 2)}</p>`
+            resultado2.innerHTML += `<p>O valor de <strong>${numeroUm}<sup>2</sup></strong> é ${Math.pow(numeroUm, 3)}</p>`
+
+
+        }
+    </script>
+</body>
+</html>

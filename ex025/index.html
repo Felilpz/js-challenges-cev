@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados de formulário</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+        #valorInput {
+            padding: 5px;
+            font-size: 1em;
+        }
+        #diff {
+            background-color: darkgreen;
+            padding: 7px;
+            color: white;
+            font-size: 1em;
+            border-radius: 3px;
+        }
+        #diff:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contando de 0 até um número positivo qualquer</h1>
+    <p>Escolha o limite final para a contagem a partir do 0 (digite apenas números postivos)</p>
+            <p>Valor final: 
+                <input type="number" name="num" id="valorInput" placeholder="Apenas positivos"> 
+                <button id="diff" onclick="contar()">
+                    Contar
+                </button>
+            </p>
+    <div id="res">
+        <p>Preencha os dados acima e aperte o botão verde.</p>
+    </div>
+    <script>
+        function contar() {
+            let resultado = window.document.getElementById("res") //saida
+            let valor = Number(window.document.getElementById("valorInput").value) //valor formatado
+            resultado.innerHTML += `<h2>Contando de 0 até ${valor}</h2>`
+            let i = 0
+
+           while(i <= valor) {
+            resultado.innerHTML += `${i} &#x1F449;`
+            i++
+           }
+           resultado.innerHTML += ` &#x1F3C1;`
+        }
+        //passei por bastante dificuldade nesse exercicio, vou estudar mais a fundo
+    </script>
+</body>
+</html>

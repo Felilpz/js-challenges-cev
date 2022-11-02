@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>MAIOR VALOR</h1>
+    <button id="btn" onclick="maiorvalor()">
+        Clique para começar
+    </button>
+    <div id="res">
+        <p>
+            O resultado vai aparecer aqui
+        </p>
+    </div>
+    <script>
+        function maiorvalor() {
+            let resultado = document.getElementById("res")
+            let numeroUm = Number(window.prompt("Digite um numero: "))
+            let numeroDois = Number(window.prompt("Digite outro numero: "))
+
+            if(numeroUm > numeroDois) {
+                resultado.innerHTML = `<p>Analisando os valores <mark>${numeroUm} e ${numeroDois}</mark>, o maior valor é <strong style="color:red;">${numeroUm}.</strong></p>`
+            } else if(numeroUm == numeroDois) {
+                resultado.innerHTML = `<p>OS NUMEROS SÃO IGUAIS!/p>`
+            } else {
+                resultado.innerHTML = `<p>Analisando os valores <mark>${numeroUm} e ${numeroDois}</mark>, o maior valor é <strong style="color:red;">${numeroDois}.</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

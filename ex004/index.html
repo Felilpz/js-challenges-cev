@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO 4</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #btn {
+            width: 200px;
+            height: 90px;
+        }
+        #res {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com dados v2</h1>
+    <button id="btn" onclick="clicar()">
+        Clica para começar
+    </button>
+    <div id="res">
+        <p>Aqui vai aparecer o resultado...</p>
+    </div>
+    <script>
+        function clicar() {
+            let nome = window.prompt("Qual é o seu nome?") // o "window." na frente da "chamada" não é obrigatório
+            let resultado = window.document.getElementById("res")
+            
+            resultado.innerHTML = `Olá, <strong>${nome}</strong>! É um prazer te conhecer! &#x1F44C`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em JS</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tente adivinhar meu número</h1>
+    <button id="btn" onclick="adivinhar()">
+        Tente adivinhar
+    </button>
+    <div id="res">
+        <p>Já pensei em um valor que esta <strong>Entre 1 e 100</strong>...</p>
+    </div>
+    <script>
+        function adivinhar() {
+            let resultado = window.document.getElementById("res")
+            let gerador = Math.floor(Math.random() * 100) + 1 //random
+            let digitado = Number(window.prompt("Digite o número: "))
+            
+            if(digitado > gerador) {
+                resultado.innerHTML += `<p>Você digitou <strong>${digitado}</strong>, mas o meu é <strong>MENOR!</strong> ${gerador}</p>`
+            } else if(digitado == gerador) {
+                resultado.innerHTML += `<p><strong>PARABÊNS, VOCÊ ACERTOU O NÚMERO!!! (${digitado})</strong></p>`
+            } else if(digitado < gerador) {
+                resultado.innerHTML += `<p>Você digitou <strong>${digitado}</strong>, mas o meu é <strong>MAIOR!</strong> ${gerador}</p>` 
+            } else {
+                resultado.innerHTML += `<p><em>Isso não me parece um número</em>...</p>`
+            }
+        }
+    </script>
+</body>
+</html>

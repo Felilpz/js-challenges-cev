@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros com JS</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #btn {
+            width: 200px;
+            height: 90px;
+        }
+        #res {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button id="btn" onclick="clicar()">
+        Iniciar a Soma
+    </button>
+    <div id="res">
+        <p>O Resultado vem aqui...</p>
+    </div>
+    <script>
+        function clicar() {
+            let numeroUm = Number(window.prompt("Digite um número: "))
+            let numeroDois = Number(window.prompt("Digite outro número: "))
+            let resultado = window.document.getElementById("res")
+
+            let soma = numeroUm + numeroDois
+
+            resultado.innerHTML = `A soma entre <mark>${numeroUm}</mark> e <mark>${numeroDois}</mark> é igual a <strong>${soma}</strong>`
+        }
+    </script>
+</body>
+</html>

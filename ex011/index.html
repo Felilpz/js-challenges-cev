@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Média do aluno v2</h1>
+    <button id="btn" onclick="calcular()">
+        Calcular média
+    </button>
+    <div id="res">
+        <p>
+            O resultado vai aparecer aqui...
+        </p>
+    </div>
+    <script>
+        function calcular() {
+            let resultado = window.document.querySelector("div#res")
+            let nome = window.prompt("Nome do aluno: ")
+            let notaUm = Number(window.prompt("Primeira nota: (max 10)"))
+            let notaDois = Number(window.prompt("Segunda nota: (max 10)"))
+
+            //let media = (notaUm + notaDois) / 2
+            if(notaUm <= 10 && notaDois <= 10) {
+                let media = (notaUm + notaDois) / 2
+                if(media >= 6) {
+                    resultado.innerHTML = `<p>Calculando a média final de <mark>${nome}.</mark></p>`
+                    resultado.innerHTML += `<p>As notas obtidas foram <mark>${notaUm} e ${notaDois}.</mark></p>`
+                    resultado.innerHTML += `<p>A média final será <mark>${media}.</mark></p>` 
+                    resultado.innerHTML += `<p>A mensagem que temos é <strong style="color:red;">MEUS PARABENS</strong></p>`
+                } else {
+                    resultado.innerHTML = `<p>Calculando a média final de <mark>${nome}.</mark></p>`
+                    resultado.innerHTML += `<p>As notas obtidas foram <mark>${notaUm} e ${notaDois}.</mark></p>`
+                    resultado.innerHTML += `<p>A média final será <mark>${media}.</mark></p>` 
+                    resultado.innerHTML += `<p>A mensagem que temos é <strong style="color:red;">VOCÊ PRECISA ESTUDAR MAIS!</p></strong>`
+                }
+            } else {
+                window.alert("As notas precisam ser menor do que 10!")
+            }
+                      
+        }
+    </script>
+</body>
+</html>

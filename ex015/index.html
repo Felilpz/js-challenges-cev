@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando data e hora</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisando data e hora do sistema</h1>
+    <button id="btn" onclick="analisar()">
+        Iniciar análise
+    </button>
+    <div id="res">
+        <p>Aqui aparecerá algo...</p>
+    </div>
+    <script>
+        function analisar() {
+            
+            let resultado = document.getElementById("res")
+            let pegarInfo = new Date()
+
+            let dia = pegarInfo.getDate()
+            let mes = pegarInfo.getMonth() //take
+            let ano = pegarInfo.getFullYear()
+            let diaSem = pegarInfo.getDay() //take
+            let hora = pegarInfo.getHours()
+            let minutos = pegarInfo.getMinutes()
+            let segundos = pegarInfo.getSeconds()
+
+            //console.log(dia, mes, ano, diaSem, hora, minutos, segundos)
+
+            switch(mes) { //Mês
+                case 0:
+                    mes = "Janeiro"
+                    break
+                case 1:
+                    mes = "Fevereiro"
+                    break
+                case 2:
+                    mes = "Março"
+                    break
+                case 3:
+                    mes = "Abril"
+                    break
+                case 4:
+                    mes = "Maio"
+                    break
+                case 5:
+                    mes = "Junho"
+                    break
+                case 6:
+                    mes = "Julho"
+                    break
+                case 7:
+                    mes = "Agosto"
+                    break
+                case 8:
+                    mes = "Setembro"
+                    break
+                case 9:
+                    mes = "Outubro"
+                    break
+                case 10:
+                    mes = "Novembro"
+                    break
+                case 11:
+                    mes = "Dezembro"
+                    break
+                default:
+                    console.log("Done")
+                    
+            }
+            
+            switch(diaSem) {
+                case 0:
+                    diaSem = "Domingo"
+                    break
+                case 1:
+                    diaSem = "Segunda-Feira"
+                    break
+                case 2:
+                    diaSem = "Terça-Feira"
+                    break
+                case 3:
+                    diaSem = "Quarta-Feira"
+                    break
+                case 4:
+                    diaSem = "Quinta-Feira"
+                    break
+                case 5:
+                    diaSem = "Sexta-Feira"
+                    break
+                case 6:
+                    diaSem = "Sábado"
+                    break
+                default:
+                    console.log("Done")
+            }
+
+            //dia 
+            //mes 
+            //ano 
+            //dia da sem 
+            //hora
+            //minutos
+            //segundos
+
+            resultado.innerHTML = `<p>Dia: <mark>${dia}</mark></p>`
+            resultado.innerHTML += `<p>Mês: <mark>${mes}</mark></p>`
+            resultado.innerHTML += `<p>Ano: <mark>${ano}</mark></p>`
+            resultado.innerHTML += `<p>Dia da semana: <mark>${diaSem}</mark></p>`
+            resultado.innerHTML += `<p>Hora: <mark>${hora}</mark></p>`
+            resultado.innerHTML += `<p>Minutos: <mark>${minutos}</mark></p>`
+            resultado.innerHTML += `<p>Segundos: <mark>${segundos}</mark></p>`
+        }
+    </script>
+</body>
+</html>

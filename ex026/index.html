@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem inteligente</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+        #inicio, #final {
+            padding: 5px;
+            font-size: 1em;
+        }
+        #diff {
+            background-color: darkgreen;
+            padding: 7px;
+            color: white;
+            font-size: 1em;
+            border-radius: 3px;
+        }
+        #diff:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem "INTELIGENTE"</h1>
+    <p>
+        Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.
+    </p>
+    <div id="formulario">
+        <p>
+            Valor final: <input type="number" id="inicio" placeholder="Início da contagem">
+        </p>
+        <p>
+            Valor final: <input type="number" id="final" placeholder="Final da contagem">
+        </p>
+        <button id="diff" onclick="contar()">
+            Contar
+        </button>
+        <button id="diff" onclick="limpar()">
+            Limpar
+        </button>
+    </div>
+    <div id="res">
+        <p>
+            Preencha os dados acima e aperte o botão.
+        </p>
+    </div>
+    <script>
+        function contar() {
+            let resultado = window.document.getElementById("res")
+            let start = Number(document.getElementById("inicio").value)
+            let finals = Number(document.getElementById("final").value)
+            
+            let i = start
+            if(finals > start) {
+                while(i <= finals) {
+                resultado.innerHTML += ` ${i} &#x1F449;`
+                i++
+            }
+            } else if(i > finals) {
+                while(i >= finals) {
+                resultado.innerHTML += ` ${i} &#x1F449;`
+                i--
+            }
+            } else {
+                resultado.innerHTML += `Dados iguais, não foi possível contar!`
+            }
+            resultado.innerHTML += ` &#x1F3C1;`
+        }
+
+        function limpar() {
+            let resultado = window.document.getElementById("res")
+            resultado.innerHTML = ``
+        }
+    </script>
+</body>
+</html>

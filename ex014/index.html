@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o sistema</title>
+    <style>
+        * {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        #btn {
+            width: 200px;
+            height: 90px;
+            font-size: 1em;
+        }
+
+        #res {
+            padding-top: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Pacifico", cursive;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com o sistema</h1>
+    <button id="btn" onclick="clicar()">
+        Clique em mim
+    </button>
+    <div id="res">
+        <p>Aqui vai aparecer algo...</p>
+    </div>
+    <script>
+        function clicar() {
+            let resultado = window.document.getElementById("res")
+            let pegarInfo = new Date()
+
+            resultado.innerHTML = `<p>O que eu recebi do sistema foi: <mark><em>${pegarInfo}</em></mark></p>`
+        }
+    </script>
+</body>
+</html>
